@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp1());
 }
 
 class MyApp extends StatelessWidget {
@@ -41,11 +41,46 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          //ctrl + space = > get container attribute
-          width: 100,
-          height: 100,
-          color: Colors.limeAccent,
-          child: Text('Hello Devops!!'),
+          alignment: Alignment.center,
+          color: Colors.blue,
+          child: Text('Hello, Flutter!'),
+        ),
+      ),
+    );
+  }
+}
+
+class MyApp1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Container Example'),
+        ),
+        body: Center(
+          child: Container(
+            width: 200,
+            height: 100,
+            padding: EdgeInsets.all(16.0),
+            margin: EdgeInsets.all(16.0),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(8.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 10.0,
+                  spreadRadius: 2.0,
+                ),
+              ],
+            ),
+            child: Text(
+              'Hello, Flutter!',
+              style: TextStyle(color: Colors.white, fontSize: 18.0),
+            ),
+          ),
         ),
       ),
     );
