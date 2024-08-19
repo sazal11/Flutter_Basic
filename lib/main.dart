@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp1());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -41,9 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          alignment: Alignment.center,
-          color: Colors.blue,
-          child: Text('Hello, Flutter!'),
+          width: 200,
+          height: 100,
+          color: Colors.blueGrey,
+          child: Center(
+            child: Text(
+              'This is center of Container',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
         ),
       ),
     );
