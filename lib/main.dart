@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const ElevatedButtonEg1());
+  runApp(const OutLinedButtonEg1());
 }
 
 class MyApp extends StatelessWidget {
@@ -227,5 +227,25 @@ class ElevatedButtonEg1 extends StatelessWidget {
                   print('Elevated Button pressed');
                 },
                 child: Text('Elevated Button'))));
+  }
+}
+
+class OutLinedButtonEg1 extends StatelessWidget {
+  const OutLinedButtonEg1({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Elevated Button Example'),
+            ),
+            body: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OutlinedButton(
+                  onPressed: () {
+                    print('Outlined Button Pressed');
+                  },
+                  child: Text('Outlined Button')),
+            )));
   }
 }
