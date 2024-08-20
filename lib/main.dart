@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const CenterWidgetEg1());
+  runApp(const CenterMultipleWidgetEg1());
 }
 
 class MyApp extends StatelessWidget {
@@ -106,6 +106,33 @@ class CenterWidgetEg1 extends StatelessWidget {
           child: Text(
             'Hello, Flutter!',
             style: TextStyle(fontSize: 24, color: Colors.blue),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CenterMultipleWidgetEg1 extends StatelessWidget {
+  const CenterMultipleWidgetEg1({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Center Widget Example'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.star, size: 50, color: Colors.yellow),
+              SizedBox(height: 20),
+              Text(
+                'Centered Text',
+                style: TextStyle(fontSize: 24, color: Colors.blue),
+              ),
+            ],
           ),
         ),
       ),
