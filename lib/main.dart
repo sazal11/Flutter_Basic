@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const BackButtonExample());
+  runApp(const CloseButtonExample());
 }
 
 class MyApp extends StatelessWidget {
@@ -397,6 +397,31 @@ class BackButtonExample extends StatelessWidget {
         ),
         body: Center(
           child: Text('Press the back button to go back.'),
+        ),
+      ),
+    );
+  }
+}
+
+class CloseButtonExample extends StatelessWidget {
+  const CloseButtonExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Close Button Example'),
+          leading: CloseButton(
+            color: Colors.red, // Optional: customize the color
+            onPressed: () {
+              // Custom action before closing the screen
+              Navigator.pop(context);
+            },
+          ),
+        ),
+        body: Center(
+          child: Text('Press the close button to close this page.'),
         ),
       ),
     );
