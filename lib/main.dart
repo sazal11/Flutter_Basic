@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const TextWidgetEg1());
+  runApp(const TextWidgetEg2());
 }
 
 class MyApp extends StatelessWidget {
@@ -158,5 +158,37 @@ class TextWidgetEg1 extends StatelessWidget {
                 backgroundColor: Colors.lightGreen),
           )),
     );
+  }
+}
+
+class TextWidgetEg2 extends StatelessWidget {
+  const TextWidgetEg2({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Flutter Container'),
+            ),
+            body: Center(
+              child: Text(
+                'Hello, Flutter!',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2.0,
+                  wordSpacing: 4.0,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 10.0,
+                      color: Colors.black,
+                      offset: Offset(5.0, 5.0),
+                    ),
+                  ],
+                ),
+                textAlign: TextAlign.center,
+              ),
+            )));
   }
 }
