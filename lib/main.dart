@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CenterWidgetEg1());
 }
 
 class MyApp extends StatelessWidget {
@@ -86,6 +86,26 @@ class MyApp1 extends StatelessWidget {
               'Hello, Flutter!',
               style: TextStyle(color: Colors.white, fontSize: 18.0),
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CenterWidgetEg1 extends StatelessWidget {
+  const CenterWidgetEg1({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Center Widget Example'),
+        ),
+        body: Center(
+          child: Text(
+            'Hello, Flutter!',
+            style: TextStyle(fontSize: 24, color: Colors.blue),
           ),
         ),
       ),
