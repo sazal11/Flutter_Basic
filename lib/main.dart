@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PopupMenuButtonEg());
+  runApp(const BackButtonExample());
 }
 
 class MyApp extends StatelessWidget {
@@ -372,6 +372,31 @@ class _PopupMenuButtonEgState extends State<PopupMenuButtonEg> {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class BackButtonExample extends StatelessWidget {
+  const BackButtonExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Back Button Example'),
+          leading: BackButton(
+            color: Colors.black, // Optional: customize the color
+            onPressed: () {
+              // Custom action before popping the screen
+              Navigator.pop(context);
+            },
+          ),
+        ),
+        body: Center(
+          child: Text('Press the back button to go back.'),
         ),
       ),
     );
