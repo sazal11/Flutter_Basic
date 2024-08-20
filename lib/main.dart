@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const DropdownButtonEg1());
+  runApp(const PopupMenuButtonEg());
 }
 
 class MyApp extends StatelessWidget {
@@ -293,7 +293,7 @@ class DropdownButtonEg1 extends StatefulWidget {
 }
 
 class _DropdownButtonEg1State extends State<DropdownButtonEg1> {
-  String dropdownValue = 'Four';
+  String dropdownValue = 'One';
 
   @override
   Widget build(BuildContext context) {
@@ -317,6 +317,60 @@ class _DropdownButtonEg1State extends State<DropdownButtonEg1> {
                 child: Text(value),
               );
             }).toList(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class PopupMenuButtonEg extends StatefulWidget {
+  const PopupMenuButtonEg({super.key});
+
+  @override
+  _PopupMenuButtonEgState createState() => _PopupMenuButtonEgState();
+}
+
+class _PopupMenuButtonEgState extends State<PopupMenuButtonEg> {
+  String selectedOption = 'Option 1';
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('PopupMenuButton Example'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Selected: $selectedOption',
+                style: TextStyle(fontSize: 24),
+              ),
+              PopupMenuButton<String>(
+                onSelected: (String result) {
+                  setState(() {
+                    selectedOption = result;
+                  });
+                },
+                itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                  const PopupMenuItem<String>(
+                    value: 'Option 1',
+                    child: Text('Option 1'),
+                  ),
+                  const PopupMenuItem<String>(
+                    value: 'Option 2',
+                    child: Text('Option 2'),
+                  ),
+                  const PopupMenuItem<String>(
+                    value: 'Option 3',
+                    child: Text('Option 3'),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
