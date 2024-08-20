@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const OutLinedButtonEg1());
+  runApp(const IconButtonEg1());
 }
 
 class MyApp extends StatelessWidget {
@@ -247,5 +247,22 @@ class OutLinedButtonEg1 extends StatelessWidget {
                   },
                   child: Text('Outlined Button')),
             )));
+  }
+}
+
+class IconButtonEg1 extends StatelessWidget {
+  const IconButtonEg1({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Icon Button Example'),
+            ),
+            body: IconButton(
+                onPressed: () {
+                  print('Icon Button');
+                },
+                icon: Icon(Icons.thumb_up))));
   }
 }
