@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const TextWidgetEg2());
+  runApp(const TextButtonEg1());
 }
 
 class MyApp extends StatelessWidget {
@@ -190,5 +190,25 @@ class TextWidgetEg2 extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             )));
+  }
+}
+
+class TextButtonEg1 extends StatelessWidget {
+  const TextButtonEg1({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Button Example'),
+            ),
+            body: TextButton(
+                onPressed: () {
+                  print('Text Button Tapped');
+                },
+                onLongPress: () {
+                  print('Long Pressed');
+                },
+                child: Text('Click Here'))));
   }
 }
