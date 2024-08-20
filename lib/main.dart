@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const TextButtonEg1());
+  runApp(const ElevatedButtonEg1());
 }
 
 class MyApp extends StatelessWidget {
@@ -210,5 +210,22 @@ class TextButtonEg1 extends StatelessWidget {
                   print('Long Pressed');
                 },
                 child: Text('Click Here'))));
+  }
+}
+
+class ElevatedButtonEg1 extends StatelessWidget {
+  const ElevatedButtonEg1({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Elevated Button Example'),
+            ),
+            body: ElevatedButton(
+                onPressed: () {
+                  print('Elevated Button pressed');
+                },
+                child: Text('Elevated Button'))));
   }
 }
