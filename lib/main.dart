@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const CenterMultipleWidgetEg1());
+  runApp(const TextWidgetEg1());
 }
 
 class MyApp extends StatelessWidget {
@@ -136,6 +136,27 @@ class CenterMultipleWidgetEg1 extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class TextWidgetEg1 extends StatelessWidget {
+  const TextWidgetEg1({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Flutter Container'),
+          ),
+          body: Text(
+            "Hello Flutter Devs",
+            style: TextStyle(
+                fontSize: 25,
+                color: Colors.lightBlue,
+                fontWeight: FontWeight.bold,
+                backgroundColor: Colors.lightGreen),
+          )),
     );
   }
 }
