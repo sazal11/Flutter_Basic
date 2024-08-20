@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const FloatingActionButtonEg1());
+  runApp(const DropdownButtonEg1());
 }
 
 class MyApp extends StatelessWidget {
@@ -282,5 +282,44 @@ class FloatingActionButtonEg1 extends StatelessWidget {
               },
               child: Icon(Icons.add),
             )));
+  }
+}
+
+class DropdownButtonEg1 extends StatefulWidget {
+  const DropdownButtonEg1({super.key});
+
+  @override
+  _DropdownButtonEg1State createState() => _DropdownButtonEg1State();
+}
+
+class _DropdownButtonEg1State extends State<DropdownButtonEg1> {
+  String dropdownValue = 'Four';
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('DropdownButton Example'),
+        ),
+        body: Center(
+          child: DropdownButton<String>(
+            value: dropdownValue,
+            onChanged: (String? newValue) {
+              setState(() {
+                dropdownValue = newValue!;
+              });
+            },
+            items: <String>['One', 'Two', 'Three', 'Four']
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+          ),
+        ),
+      ),
+    );
   }
 }
