@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const IconButtonEg1());
+  runApp(const FloatingActionButtonEg1());
 }
 
 class MyApp extends StatelessWidget {
@@ -264,5 +264,23 @@ class IconButtonEg1 extends StatelessWidget {
                   print('Icon Button');
                 },
                 icon: Icon(Icons.thumb_up))));
+  }
+}
+
+class FloatingActionButtonEg1 extends StatelessWidget {
+  const FloatingActionButtonEg1({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Icon Button Example'),
+            ),
+            body: FloatingActionButton(
+              onPressed: () {
+                print('Floating Action Button Pressed');
+              },
+              child: Icon(Icons.add),
+            )));
   }
 }
