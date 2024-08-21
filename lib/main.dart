@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const CloseButtonExample());
+  runApp(const GestureDetectorExample());
 }
 
 class MyApp extends StatelessWidget {
@@ -422,6 +422,51 @@ class CloseButtonExample extends StatelessWidget {
         ),
         body: Center(
           child: Text('Press the close button to close this page.'),
+        ),
+      ),
+    );
+  }
+}
+
+class GestureDetectorExample extends StatefulWidget {
+  const GestureDetectorExample({super.key});
+
+  @override
+  _GestureDetectorExampleState createState() => _GestureDetectorExampleState();
+}
+
+class _GestureDetectorExampleState extends State<GestureDetectorExample> {
+  Color _containerColor = Colors.blue;
+
+  void _changeColor() {
+    setState(() {
+      _containerColor =
+          _containerColor == Colors.blue ? Colors.green : Colors.blue;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('GestureDetector Example'),
+        ),
+        body: Center(
+          child: GestureDetector(
+            onTap: _changeColor,
+            child: Container(
+              width: 200,
+              height: 200,
+              color: _containerColor,
+              child: Center(
+                child: Text(
+                  'Tap Me',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
