@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const GestureDetectorExample());
+  runApp(const ImageExample1());
 }
 
 class MyApp extends StatelessWidget {
@@ -469,6 +469,30 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ImageExample1 extends StatefulWidget {
+  const ImageExample1({super.key});
+
+  @override
+  _ImageExample1Example1State createState() => _ImageExample1Example1State();
+}
+
+class _ImageExample1Example1State extends State<ImageExample1> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Image Example'),
+          ),
+          body: Center(
+              child: Container(
+                  width: 100,
+                  height: 100,
+                  child: Image.asset('assets/images/logo.png')))),
     );
   }
 }
