@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const AssetImageExample());
+  runApp(const NetworkImageExample());
 }
 
 class MyApp extends StatelessWidget {
@@ -510,6 +510,30 @@ class AssetImageExample extends StatelessWidget {
         body: Center(
           child: Image.asset(
             'assets/images/wolf-flutter.jpg',
+            width: 200,
+            height: 200,
+            fit: BoxFit
+                .cover, // Optional: Adjust how the image fits in the container
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class NetworkImageExample extends StatelessWidget {
+  const NetworkImageExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Network Image Example'),
+        ),
+        body: Center(
+          child: Image.network(
+            'https://picsum.photos/250?image=9',
             width: 200,
             height: 200,
             fit: BoxFit
