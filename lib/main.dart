@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const ImageExample1());
+  runApp(const AssetImageExample());
 }
 
 class MyApp extends StatelessWidget {
@@ -493,6 +493,30 @@ class _ImageExample1Example1State extends State<ImageExample1> {
                   width: 100,
                   height: 100,
                   child: Image.asset('assets/images/logo.png')))),
+    );
+  }
+}
+
+class AssetImageExample extends StatelessWidget {
+  const AssetImageExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Asset Image Example'),
+        ),
+        body: Center(
+          child: Image.asset(
+            'assets/images/wolf-flutter.jpg',
+            width: 200,
+            height: 200,
+            fit: BoxFit
+                .cover, // Optional: Adjust how the image fits in the container
+          ),
+        ),
+      ),
     );
   }
 }
