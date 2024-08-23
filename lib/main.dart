@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const NetworkImageExample());
+  runApp(const RowExample1());
 }
 
 class MyApp extends StatelessWidget {
@@ -541,6 +541,62 @@ class NetworkImageExample extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class CustomImageExample extends StatelessWidget {
+  const CustomImageExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Custom Image Example'),
+        ),
+        body: Center(
+          child: Image.network(
+            'https://picsum.photos/250?image=9',
+            width: 300,
+            height: 300,
+            fit: BoxFit.cover,
+            alignment: Alignment.topCenter,
+            color: Colors.blue.withOpacity(0.5),
+            colorBlendMode: BlendMode.colorBurn,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class RowExample1 extends StatelessWidget {
+  const RowExample1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Row Column Example'),
+          ),
+          body: Container(
+            height: 300,
+            color: Colors.orangeAccent,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text('A', style: TextStyle(fontSize: 25)),
+                Text('B', style: TextStyle(fontSize: 25)),
+                Text('C', style: TextStyle(fontSize: 25)),
+                Text('D', style: TextStyle(fontSize: 25)),
+                Text('E', style: TextStyle(fontSize: 25)),
+                ElevatedButton(onPressed: () {}, child: Text('Click'))
+              ],
+            ),
+          )),
     );
   }
 }
