@@ -1,7 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const ColumnExample2());
+  runApp(const InkWellExample1());
 }
 
 class MyApp extends StatelessWidget {
@@ -660,5 +662,78 @@ class ColumnExample2 extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class NestedRowColumnExample extends StatelessWidget {
+  const NestedRowColumnExample({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Nested Row and Column Example')),
+        body: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Icon(Icons.star, size: 50, color: Colors.red),
+                Icon(Icons.star, size: 50, color: Colors.green),
+                Icon(Icons.star, size: 50, color: Colors.blue),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Icon(Icons.circle, size: 50, color: Colors.orange),
+                Icon(Icons.circle, size: 50, color: Colors.purple),
+                Icon(Icons.circle, size: 50, color: Colors.yellow),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class InkWellExample1 extends StatelessWidget {
+  const InkWellExample1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(title: Text('InkWell Example')),
+            body: Center(
+              child: InkWell(
+                onTap: () {
+                  print('Tapped on Container');
+                },
+                onDoubleTap: () {
+                  print('Double Tapped on Container');
+                },
+                onLongPress: () {
+                  print('Long Pressed  on Container');
+                },
+                child: Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.red,
+                  child: Center(
+                    child: InkWell(
+                      onTap: () {
+                        print("Text Widget Tapped");
+                      },
+                      child: Text(
+                        "Click Here",
+                        style: TextStyle(
+                            fontSize: 21, fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )));
   }
 }
