@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const RowExample1());
+  runApp(const ColumnExample1());
 }
 
 class MyApp extends StatelessWidget {
@@ -571,8 +571,8 @@ class CustomImageExample extends StatelessWidget {
   }
 }
 
-class RowExample1 extends StatelessWidget {
-  const RowExample1({super.key});
+class ColumnExample1 extends StatelessWidget {
+  const ColumnExample1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -582,12 +582,30 @@ class RowExample1 extends StatelessWidget {
             title: Text('Row Column Example'),
           ),
           body: Container(
-            height: 300,
+            height: 400,
+            width: 300,
             color: Colors.orangeAccent,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text('R1', style: TextStyle(fontSize: 25)),
+                    Text('R2', style: TextStyle(fontSize: 25)),
+                    Column(
+                      children: [
+                        ElevatedButton(
+                            onPressed: () {}, child: Text('Button1')),
+                        ElevatedButton(onPressed: () {}, child: Text('Button2'))
+                      ],
+                    ),
+                    Text('R3', style: TextStyle(fontSize: 25)),
+                    Text('R4', style: TextStyle(fontSize: 25)),
+                    Text('R5', style: TextStyle(fontSize: 25)),
+                  ],
+                ),
                 Text('A', style: TextStyle(fontSize: 25)),
                 Text('B', style: TextStyle(fontSize: 25)),
                 Text('C', style: TextStyle(fontSize: 25)),
