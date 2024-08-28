@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const RowExample2());
+  runApp(const ColumnExample2());
 }
 
 class MyApp extends StatelessWidget {
@@ -630,6 +630,28 @@ class RowExample2 extends StatelessWidget {
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center, // Center horizontally
           crossAxisAlignment: CrossAxisAlignment.center, // Center vertically
+          children: <Widget>[
+            Icon(Icons.star, size: 50, color: Colors.red),
+            Icon(Icons.star, size: 50, color: Colors.green),
+            Icon(Icons.star, size: 50, color: Colors.blue),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ColumnExample2 extends StatelessWidget {
+  const ColumnExample2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Column Example')),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center, // Center vertically
+          crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
           children: <Widget>[
             Icon(Icons.star, size: 50, color: Colors.red),
             Icon(Icons.star, size: 50, color: Colors.green),
