@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const InkWellExample1());
+  runApp(const ScrollViewExample());
 }
 
 class MyApp extends StatelessWidget {
@@ -39,14 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Flutter Container'),
+        title: const Text('Flutter Container'),
       ),
       body: Center(
         child: Container(
           width: 200,
           height: 100,
           color: Colors.blueGrey,
-          child: Center(
+          child: const Center(
             child: Text(
               'This is center of Container',
               style: TextStyle(color: Colors.white),
@@ -59,24 +59,26 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class MyApp1 extends StatelessWidget {
+  const MyApp1({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Container Example'),
+          title: const Text('Container Example'),
         ),
         body: Center(
           child: Container(
             width: 200,
             height: 100,
-            padding: EdgeInsets.all(16.0),
-            margin: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
+            margin: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.circular(8.0),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 10.0,
@@ -84,7 +86,7 @@ class MyApp1 extends StatelessWidget {
                 ),
               ],
             ),
-            child: Text(
+            child: const Text(
               'Hello, Flutter!',
               style: TextStyle(color: Colors.white, fontSize: 18.0),
             ),
@@ -102,9 +104,9 @@ class CenterWidgetEg1 extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Center Widget Example'),
+          title: const Text('Center Widget Example'),
         ),
-        body: Center(
+        body: const Center(
           child: Text(
             'Hello, Flutter!',
             style: TextStyle(fontSize: 24, color: Colors.blue),
@@ -122,9 +124,9 @@ class CenterMultipleWidgetEg1 extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Center Widget Example'),
+          title: const Text('Center Widget Example'),
         ),
-        body: Center(
+        body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -149,9 +151,9 @@ class TextWidgetEg1 extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Flutter Container'),
+            title: const Text('Flutter Container'),
           ),
-          body: Text(
+          body: const Text(
             "Hello Flutter Devs",
             style: TextStyle(
                 fontSize: 25,
@@ -170,9 +172,9 @@ class TextWidgetEg2 extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Flutter Container'),
+              title: const Text('Flutter Container'),
             ),
-            body: Center(
+            body: const Center(
               child: Text(
                 'Hello, Flutter!',
                 style: TextStyle(
@@ -202,7 +204,7 @@ class TextButtonEg1 extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Button Example'),
+              title: const Text('Button Example'),
             ),
             body: TextButton(
                 onPressed: () {
@@ -211,7 +213,7 @@ class TextButtonEg1 extends StatelessWidget {
                 onLongPress: () {
                   print('Long Pressed');
                 },
-                child: Text('Click Here'))));
+                child: const Text('Click Here'))));
   }
 }
 
@@ -222,13 +224,13 @@ class ElevatedButtonEg1 extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Elevated Button Example'),
+              title: const Text('Elevated Button Example'),
             ),
             body: ElevatedButton(
                 onPressed: () {
                   print('Elevated Button pressed');
                 },
-                child: Text('Elevated Button'))));
+                child: const Text('Elevated Button'))));
   }
 }
 
@@ -239,7 +241,7 @@ class OutLinedButtonEg1 extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Elevated Button Example'),
+              title: const Text('Elevated Button Example'),
             ),
             body: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -247,7 +249,7 @@ class OutLinedButtonEg1 extends StatelessWidget {
                   onPressed: () {
                     print('Outlined Button Pressed');
                   },
-                  child: Text('Outlined Button')),
+                  child: const Text('Outlined Button')),
             )));
   }
 }
@@ -259,13 +261,13 @@ class IconButtonEg1 extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Icon Button Example'),
+              title: const Text('Icon Button Example'),
             ),
             body: IconButton(
                 onPressed: () {
                   print('Icon Button');
                 },
-                icon: Icon(Icons.thumb_up))));
+                icon: const Icon(Icons.thumb_up))));
   }
 }
 
@@ -276,13 +278,13 @@ class FloatingActionButtonEg1 extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Icon Button Example'),
+              title: const Text('Icon Button Example'),
             ),
             body: FloatingActionButton(
               onPressed: () {
                 print('Floating Action Button Pressed');
               },
-              child: Icon(Icons.add),
+              child: const Icon(Icons.add),
             )));
   }
 }
@@ -302,7 +304,7 @@ class _DropdownButtonEg1State extends State<DropdownButtonEg1> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('DropdownButton Example'),
+          title: const Text('DropdownButton Example'),
         ),
         body: Center(
           child: DropdownButton<String>(
@@ -341,7 +343,7 @@ class _PopupMenuButtonEgState extends State<PopupMenuButtonEg> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('PopupMenuButton Example'),
+          title: const Text('PopupMenuButton Example'),
         ),
         body: Center(
           child: Column(
@@ -349,7 +351,7 @@ class _PopupMenuButtonEgState extends State<PopupMenuButtonEg> {
             children: [
               Text(
                 'Selected: $selectedOption',
-                style: TextStyle(fontSize: 24),
+                style: const TextStyle(fontSize: 24),
               ),
               PopupMenuButton<String>(
                 onSelected: (String result) {
@@ -388,7 +390,7 @@ class BackButtonExample extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Back Button Example'),
+          title: const Text('Back Button Example'),
           leading: BackButton(
             color: Colors.black, // Optional: customize the color
             onPressed: () {
@@ -397,7 +399,7 @@ class BackButtonExample extends StatelessWidget {
             },
           ),
         ),
-        body: Center(
+        body: const Center(
           child: Text('Press the back button to go back.'),
         ),
       ),
@@ -413,7 +415,7 @@ class CloseButtonExample extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Close Button Example'),
+          title: const Text('Close Button Example'),
           leading: CloseButton(
             color: Colors.red, // Optional: customize the color
             onPressed: () {
@@ -422,7 +424,7 @@ class CloseButtonExample extends StatelessWidget {
             },
           ),
         ),
-        body: Center(
+        body: const Center(
           child: Text('Press the close button to close this page.'),
         ),
       ),
@@ -452,7 +454,7 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('GestureDetector Example'),
+          title: const Text('GestureDetector Example'),
         ),
         body: Center(
           child: GestureDetector(
@@ -461,7 +463,7 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
               width: 200,
               height: 200,
               color: _containerColor,
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Tap Me',
                   style: TextStyle(color: Colors.white, fontSize: 24),
@@ -488,10 +490,10 @@ class _ImageExample1Example1State extends State<ImageExample1> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Image Example'),
+            title: const Text('Image Example'),
           ),
           body: Center(
-              child: Container(
+              child: SizedBox(
                   width: 100,
                   height: 100,
                   child: Image.asset('assets/images/logo.png')))),
@@ -507,7 +509,7 @@ class AssetImageExample extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Asset Image Example'),
+          title: const Text('Asset Image Example'),
         ),
         body: Center(
           child: Image.asset(
@@ -531,7 +533,7 @@ class NetworkImageExample extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Network Image Example'),
+          title: const Text('Network Image Example'),
         ),
         body: Center(
           child: Image.network(
@@ -555,7 +557,7 @@ class CustomImageExample extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Custom Image Example'),
+          title: const Text('Custom Image Example'),
         ),
         body: Center(
           child: Image.network(
@@ -581,7 +583,7 @@ class ColumnExample1 extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Row Column Example'),
+            title: const Text('Row Column Example'),
           ),
           body: Container(
             height: 400,
@@ -594,26 +596,27 @@ class ColumnExample1 extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('R1', style: TextStyle(fontSize: 25)),
-                    Text('R2', style: TextStyle(fontSize: 25)),
+                    const Text('R1', style: TextStyle(fontSize: 25)),
+                    const Text('R2', style: TextStyle(fontSize: 25)),
                     Column(
                       children: [
                         ElevatedButton(
-                            onPressed: () {}, child: Text('Button1')),
-                        ElevatedButton(onPressed: () {}, child: Text('Button2'))
+                            onPressed: () {}, child: const Text('Button1')),
+                        ElevatedButton(
+                            onPressed: () {}, child: const Text('Button2'))
                       ],
                     ),
-                    Text('R3', style: TextStyle(fontSize: 25)),
-                    Text('R4', style: TextStyle(fontSize: 25)),
-                    Text('R5', style: TextStyle(fontSize: 25)),
+                    const Text('R3', style: TextStyle(fontSize: 25)),
+                    const Text('R4', style: TextStyle(fontSize: 25)),
+                    const Text('R5', style: TextStyle(fontSize: 25)),
                   ],
                 ),
-                Text('A', style: TextStyle(fontSize: 25)),
-                Text('B', style: TextStyle(fontSize: 25)),
-                Text('C', style: TextStyle(fontSize: 25)),
-                Text('D', style: TextStyle(fontSize: 25)),
-                Text('E', style: TextStyle(fontSize: 25)),
-                ElevatedButton(onPressed: () {}, child: Text('Click'))
+                const Text('A', style: TextStyle(fontSize: 25)),
+                const Text('B', style: TextStyle(fontSize: 25)),
+                const Text('C', style: TextStyle(fontSize: 25)),
+                const Text('D', style: TextStyle(fontSize: 25)),
+                const Text('E', style: TextStyle(fontSize: 25)),
+                ElevatedButton(onPressed: () {}, child: const Text('Click'))
               ],
             ),
           )),
@@ -628,8 +631,8 @@ class RowExample2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Row Example')),
-        body: Row(
+        appBar: AppBar(title: const Text('Row Example')),
+        body: const Row(
           mainAxisAlignment: MainAxisAlignment.center, // Center horizontally
           crossAxisAlignment: CrossAxisAlignment.center, // Center vertically
           children: <Widget>[
@@ -650,8 +653,8 @@ class ColumnExample2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Column Example')),
-        body: Column(
+        appBar: AppBar(title: const Text('Column Example')),
+        body: const Column(
           mainAxisAlignment: MainAxisAlignment.center, // Center vertically
           crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
           children: <Widget>[
@@ -671,8 +674,8 @@ class NestedRowColumnExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Nested Row and Column Example')),
-        body: Column(
+        appBar: AppBar(title: const Text('Nested Row and Column Example')),
+        body: const Column(
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -704,7 +707,7 @@ class InkWellExample1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(title: Text('InkWell Example')),
+            appBar: AppBar(title: const Text('InkWell Example')),
             body: Center(
               child: InkWell(
                 onTap: () {
@@ -725,7 +728,7 @@ class InkWellExample1 extends StatelessWidget {
                       onTap: () {
                         print("Text Widget Tapped");
                       },
-                      child: Text(
+                      child: const Text(
                         "Click Here",
                         style: TextStyle(
                             fontSize: 21, fontWeight: FontWeight.w700),
@@ -735,5 +738,78 @@ class InkWellExample1 extends StatelessWidget {
                 ),
               ),
             )));
+  }
+}
+
+class ScrollViewExample extends StatelessWidget {
+  const ScrollViewExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.orange,
+            title: const Text('Scroll View Widget Example'),
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 11),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(right: 11),
+                            height: 200,
+                            width: 200,
+                            color: Colors.red
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(right: 11),
+                            height: 200,
+                            width: 200,
+                            color: Colors.orange
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(right: 11),
+                            height: 200,
+                            width: 200,
+                            color: Colors.blue
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(right: 11),
+                            height: 200,
+                            width: 200,
+                            color: Colors.yellow
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 11),
+                    height: 200,
+                    color: Colors.orange,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 11),
+                    height: 200,
+                    color: Colors.green,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 11),
+                    height: 200,
+                    color: Colors.cyanAccent,
+                  ),
+                ],
+              ),
+            ),
+          )),
+    );
   }
 }
