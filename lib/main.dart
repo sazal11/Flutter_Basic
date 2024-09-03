@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const ScrollViewExample());
+  runApp(const ListViewExample1());
 }
 
 class MyApp extends StatelessWidget {
@@ -764,29 +764,25 @@ class ScrollViewExample extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(right: 11),
-                            height: 200,
-                            width: 200,
-                            color: Colors.red
-                          ),
+                              margin: const EdgeInsets.only(right: 11),
+                              height: 200,
+                              width: 200,
+                              color: Colors.red),
                           Container(
-                            margin: const EdgeInsets.only(right: 11),
-                            height: 200,
-                            width: 200,
-                            color: Colors.orange
-                          ),
+                              margin: const EdgeInsets.only(right: 11),
+                              height: 200,
+                              width: 200,
+                              color: Colors.orange),
                           Container(
-                            margin: const EdgeInsets.only(right: 11),
-                            height: 200,
-                            width: 200,
-                            color: Colors.blue
-                          ),
+                              margin: const EdgeInsets.only(right: 11),
+                              height: 200,
+                              width: 200,
+                              color: Colors.blue),
                           Container(
-                            margin: const EdgeInsets.only(right: 11),
-                            height: 200,
-                            width: 200,
-                            color: Colors.yellow
-                          ),
+                              margin: const EdgeInsets.only(right: 11),
+                              height: 200,
+                              width: 200,
+                              color: Colors.yellow),
                         ],
                       ),
                     ),
@@ -809,6 +805,47 @@ class ScrollViewExample extends StatelessWidget {
                 ],
               ),
             ),
+          )),
+    );
+  }
+}
+
+class ListViewExample1 extends StatelessWidget {
+  const ListViewExample1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar( backgroundColor: Colors.orange,title: const Text('List View Example')),
+          
+          body: ListView(
+            scrollDirection: Axis.vertical,
+            reverse: true,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('One',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Two',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Three',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Four',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Five',style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),),
+              ),
+              
+
+            ],
           )),
     );
   }
