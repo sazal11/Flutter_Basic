@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const ListViewBuilderExample1());
+  runApp(const ListViewSeparatedExample1());
 }
 
 class MyApp extends StatelessWidget {
@@ -888,6 +888,63 @@ class ListViewBuilderExample1 extends StatelessWidget {
             itemExtent: 100,
             //scrollDirection: Axis.horizontal,
           )),
+    );
+  }
+}
+
+class ListViewSeparatedExample1 extends StatelessWidget {
+  const ListViewSeparatedExample1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var arrNames = ['Ram', 'Shyam', 'Hari', 'Kumar', 'Shova', 'Rahul', 'Sita'];
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+              backgroundColor: Colors.orange,
+              title: const Text('ListView Separated Example')),
+          body: ListView.separated(
+              itemBuilder: (context, index) {
+                return Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Text(
+                            arrNames[index],
+                            style: TextStyle(
+                                fontSize: 21, fontWeight: FontWeight.w500),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              arrNames[index],
+                              style: TextStyle(
+                                  fontSize: 11, fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        arrNames[index],
+                        style: TextStyle(
+                            fontSize: 21, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ],
+                );
+              },
+              separatorBuilder: (context, index) {
+                return Divider(
+                  height: 5,
+                  thickness: 2,
+                );
+              },
+              itemCount: arrNames.length)),
     );
   }
 }
