@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const ListViewSeparatedExample1());
+  runApp(const SingleChildScrollViewExample1());
 }
 
 class MyApp extends StatelessWidget {
@@ -948,3 +948,26 @@ class ListViewSeparatedExample1 extends StatelessWidget {
     );
   }
 }
+
+class SingleChildScrollViewExample1 extends StatelessWidget {
+  const SingleChildScrollViewExample1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+   
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+              backgroundColor: Colors.orange,
+              title: const Text('Single Child Scroll View Example')),
+          body: SingleChildScrollView(
+          child: Column(children: List.generate(20, (index) => Container(
+            margin: EdgeInsets.all(8.0),
+            height: 100,
+            color: Colors.red[(index + 1) * 100],
+          ),),),
+        )),
+    );
+  }
+}
+
