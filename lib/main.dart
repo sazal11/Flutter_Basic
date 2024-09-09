@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const ListViewExample2());
+  runApp(const GridViewExample1());
 }
 
 class MyApp extends StatelessWidget {
@@ -994,6 +994,37 @@ class ListViewExample2 extends StatelessWidget {
               ),
             ),
           )),
+    );
+  }
+}
+
+class GridViewExample1 extends StatelessWidget {
+  const GridViewExample1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.orange,
+            title: const Text('GridView Example')),
+        body: GridView.count(
+          crossAxisCount: 3, // Number of columns
+          children: List.generate(
+            20,
+            (index) => Container(
+              margin: EdgeInsets.all(8.0),
+              color: Colors.green[(index + 1) * 100],
+              child: Center(
+                child: Text(
+                  'Item $index',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
