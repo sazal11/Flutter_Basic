@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const GridViewExample1());
+  runApp(const CustomScrollViewExample1());
 }
 
 class MyApp extends StatelessWidget {
@@ -1023,6 +1023,40 @@ class GridViewExample1 extends StatelessWidget {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomScrollViewExample1 extends StatelessWidget {
+   const CustomScrollViewExample1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('CustomScrollView Example'),
+        ),
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              expandedHeight: 200,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text('SliverAppBar'),
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => ListTile(
+                  leading: Icon(Icons.star),
+                  title: Text('Item $index'),
+                ),
+                childCount: 20,
+              ),
+            ),
+          ],
         ),
       ),
     );
