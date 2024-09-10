@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const CustomScrollViewExample1());
+  runApp(const AddingDecorationExample());
 }
 
 class MyApp extends StatelessWidget {
@@ -1030,7 +1030,7 @@ class GridViewExample1 extends StatelessWidget {
 }
 
 class CustomScrollViewExample1 extends StatelessWidget {
-   const CustomScrollViewExample1({super.key});
+  const CustomScrollViewExample1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1059,6 +1059,39 @@ class CustomScrollViewExample1 extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class AddingDecorationExample extends StatelessWidget {
+  const AddingDecorationExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+              backgroundColor: Colors.orange,
+              title: const Text('GridView Example')),
+          body: Container(
+            width: double.infinity, //getting full space
+            height: double.infinity, //getting full space
+            child: Center(
+              child: Container(
+                width: 150,
+                height: 150,
+                decoration: BoxDecoration(
+                    color: Colors.blueGrey,
+                    //borderRadius: BorderRadius.circular(21),
+                    border: Border.all(width: 5, color: Colors.black),
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 51, spreadRadius: 21, color: Colors.grey)
+                    ],
+                    shape: BoxShape.circle),
+              ),
+            ),
+          )),
     );
   }
 }
