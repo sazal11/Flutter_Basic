@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const ExpandedWidgetExample());
+  runApp(const ExpandedWidgetExample2());
 }
 
 class MyApp extends StatelessWidget {
@@ -1183,6 +1183,52 @@ class ExpandedWidgetExample extends StatelessWidget {
                 flex: 1,
                  child: Container(
                   width: 50,
+                  height: 100,
+                  color: Colors.green,
+                               ),
+               )
+            ],
+          ) 
+          ),
+    );
+  }
+}
+
+class ExpandedWidgetExample2 extends StatelessWidget {
+  const ExpandedWidgetExample2({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+              backgroundColor: Colors.orange,
+              title: const Text('Expanded Widget Example')),
+          body: Column(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Container(
+                  height: 100,
+                  color: Colors.blue,
+                ),
+              ),
+              Expanded(
+                flex: 4,
+                child: Container(
+                  height: 100,
+                  color: Colors.red,
+                ),
+              ),
+               Expanded(
+                flex: 2,
+                 child: Container(
+                  height: 100,
+                  color: Colors.blueGrey,
+                               ),
+               ),
+               Expanded(
+                flex: 1,
+                 child: Container(
                   height: 100,
                   color: Colors.green,
                                ),
