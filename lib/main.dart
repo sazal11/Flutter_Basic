@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const AddingDecorationExample());
+  runApp(const DecoratedContainerExample());
 }
 
 class MyApp extends StatelessWidget {
@@ -1092,6 +1092,52 @@ class AddingDecorationExample extends StatelessWidget {
               ),
             ),
           )),
+    );
+  }
+}
+
+class DecoratedContainerExample extends StatelessWidget {
+  const DecoratedContainerExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Decorated Container Example')),
+        body: Center(
+          child: Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blue, // Background color
+              border: Border.all(
+                color: Colors.black,
+                width: 3, // Border width
+              ),
+              borderRadius: BorderRadius.circular(20), // Rounded corners
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // Shadow position
+                ),
+              ],
+              gradient: LinearGradient(
+                colors: [Colors.blue, Colors.purple], // Gradient colors
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                'Decorated Box',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
